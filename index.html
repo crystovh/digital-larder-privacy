@@ -101,6 +101,35 @@
         a {
             color: #4d6645;
         }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: #5b605d;
+        }
+
+        th, td {
+            text-align: left;
+            vertical-align: top;
+            padding: 8px 6px;
+            border-bottom: 1px solid #e6ebe3;
+        }
+
+        th {
+            color: #4d6645;
+            font-weight: 600;
+        }
+
+        .table-wrap { overflow-x: auto; }
+
+        h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #2e3431;
+            margin: 16px 0 6px;
+        }
     </style>
 </head>
 <body>
@@ -111,113 +140,212 @@
 </header>
 
 <main>
-    <p class="last-updated">Last updated: April 2026</p>
+    <p class="last-updated">Last updated: 20 September 2026</p>
 
     <div class="highlight">
         <p>
-            The Bag is a personal grocery and recipe app.
-            We are committed to protecting your privacy.
-            This policy explains what data we collect and how we use it.
+            The Bag is an iOS app for shopping lists, recipes and an AI cooking assistant ("Chef AI").
+            This policy explains which personal data the app processes, why, who receives it,
+            and what rights you have under the General Data Protection Regulation (GDPR).
         </p>
     </div>
 
     <section>
-        <h2>1. Who We Are</h2>
+        <h2>1. Controller</h2>
         <p>
-            The Bag is an independent app developed by crystovh.
-            If you have any questions about this policy, contact us at:
+            The Bag is developed and operated by crystovh (independent developer).<br>
+            Contact for all privacy matters:
             <a href="mailto:betreffen_skalar.2n@icloud.com">betreffen_skalar.2n@icloud.com</a>
         </p>
     </section>
 
     <section>
-        <h2>2. Data We Collect</h2>
-        <p>We collect only the minimum data necessary to operate the app:</p>
-        <ul>
-            <li><strong>Email address</strong> — used to create and authenticate your account via Supabase</li>
-            <li><strong>Chef AI messages</strong> — the text you type in the Chef AI chat is sent to our server to generate recipe suggestions</li>
-        </ul>
-        <p style="margin-top: 12px;">
-            We do <strong>not</strong> collect your name, phone number, location,
-            payment information, or any other personal data.
-        </p>
-    </section>
+        <h2>2. What Data We Process, Why, and on Which Legal Basis</h2>
 
-    <section>
-        <h2>3. Data Stored on Your Device</h2>
-        <p>The following data is stored <strong>only on your iPhone</strong> and never sent to our servers:</p>
-        <ul>
-            <li>Your grocery lists and categories</li>
-            <li>Your saved recipes</li>
-            <li>Your recipe ratings and custom names</li>
-        </ul>
-        <p style="margin-top: 12px;">
-            This data is stored using Apple's SwiftData framework and remains
-            on your device. Deleting the app removes all local data.
-        </p>
-    </section>
-
-    <section>
-        <h2>4. How We Use Your Data</h2>
-        <ul>
-            <li><strong>Email address</strong> — to authenticate you and keep your account secure</li>
-            <li><strong>Chef AI messages</strong> — forwarded to a large language model (LLM) to generate recipe suggestions. Messages are not stored after the response is returned.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>5. Data Sharing</h2>
-        <p>We do <strong>not</strong> sell, rent, or share your personal data with any third parties for marketing or advertising purposes.</p>
-        <p>Your Chef AI messages are processed by a third-party LLM provider to generate responses. This is covered by their own privacy policies.</p>
-    </section>
-
-    <section>
-        <h2>6. Data Security</h2>
-        <ul>
-            <li>Authentication tokens are stored securely in the iOS Keychain</li>
-            <li>All data transmission uses HTTPS encryption</li>
-            <li>Your account is protected by Supabase authentication infrastructure</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>7. Your Rights</h2>
-        <p>You have the right to:</p>
-        <ul>
-            <li><strong>Delete your account</strong> — contact us at the email below and we will remove all your data</li>
-            <li><strong>Delete local data</strong> — simply delete the app from your iPhone</li>
-            <li><strong>Request your data</strong> — contact us and we will provide any data we hold about you</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>8. Children's Privacy</h2>
+        <h3>2.1 Account</h3>
         <p>
-            The Bag is not directed at children under 13.
-            We do not knowingly collect data from children under 13.
+            To use the app you need an account. We process your <strong>email address</strong>,
+            your <strong>password</strong> (stored only as a hash) and the <strong>display name</strong>
+            you choose. The display name is shown to people you share a shopping list with.
+        </p>
+        <p>
+            Purpose: creating and securing your account, password reset, showing you to list members.<br>
+            Legal basis: Art. 6(1)(b) GDPR (performance of a contract). Providing an email address is required to create an account.
+        </p>
+
+        <h3>2.2 Shopping lists</h3>
+        <p>
+            Your shopping lists are stored on our servers so they can be synced and shared. This includes
+            <strong>list names, categories, items, quantities, status and notes</strong>, the
+            <strong>members and roles</strong> of each list, and <strong>invitations</strong> you create.
+            Items record which member created or changed them.
+        </p>
+        <p>
+            If you share a list, other members of that list can see its content and your display name.
+        </p>
+        <p>
+            Purpose: providing the shopping list feature, syncing between devices and list members in real time.<br>
+            Legal basis: Art. 6(1)(b) GDPR.
+        </p>
+
+        <h3>2.3 Chef AI</h3>
+        <p>
+            When you use Chef AI, the <strong>messages you type</strong>, any <strong>photos you attach</strong>,
+            and <strong>links to recipe pages</strong> you send are transmitted to our server and forwarded to an
+            AI language model to generate an answer. Our server also runs an automated safety check on each
+            request (text and images) and blocks requests that violate our usage policy.
+        </p>
+        <p>
+            Depending on your question, the AI may perform a web search for recipes. The search terms are generated
+            from your message and sent to a search provider (see section 3). Recipe URLs you send are fetched by our server.
+        </p>
+        <p>
+            <strong>Chat history:</strong> your text messages and the AI's replies are stored in your account so you can
+            continue conversations later. Photos are <strong>not</strong> stored; they are only used to answer the message
+            they were attached to. If a request is blocked by the safety check, we store the blocked message together
+            with the category and reason for blocking.
+        </p>
+        <p>
+            Purpose: providing the Chef AI assistant and your conversation history; preventing misuse of the AI service.<br>
+            Legal basis: Art. 6(1)(b) GDPR for the assistant and history; Art. 6(1)(f) GDPR (legitimate interest in preventing misuse) for the safety check.
+        </p>
+
+        <h3>2.4 Technical data</h3>
+        <p>
+            When the app communicates with our servers, technical data such as your <strong>IP address</strong>,
+            request time, and app/device information sent by iOS is processed and may appear in short-lived server logs.
+        </p>
+        <p>
+            Purpose: delivering the service, security, troubleshooting.<br>
+            Legal basis: Art. 6(1)(f) GDPR (legitimate interest in a secure and functioning service).
+        </p>
+
+        <h3>2.5 Data that stays on your device</h3>
+        <p>
+            Your <strong>recipe library</strong> (saved recipes, favorites, ratings, planned meals, recipe categories),
+            your app settings (e.g. language) and the shopping-mode Live Activity are stored only on your iPhone
+            and are not sent to our servers. Deleting the app removes this data.
+        </p>
+        <p>
+            Camera access is only used when you choose to take a photo for Chef AI. The app contains no advertising,
+            tracking or analytics SDKs.
+        </p>
+    </section>
+
+    <section>
+        <h2>3. Recipients and Data Transfers</h2>
+        <p>We use the following service providers (processors under Art. 28 GDPR):</p>
+        <div class="table-wrap">
+        <table>
+            <tr><th>Provider</th><th>Purpose</th><th>Data</th><th>Location</th></tr>
+            <tr>
+                <td>Supabase, Inc.</td>
+                <td>Database, authentication, real-time sync</td>
+                <td>Account, shopping lists, chat history</td>
+                <td>EU (Frankfurt)</td>
+            </tr>
+            <tr>
+                <td>Hetzner Online GmbH</td>
+                <td>Hosting of our backend server</td>
+                <td>Chef AI requests, technical data</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+                <td>Cloudflare, Inc.</td>
+                <td>DNS and reverse proxy in front of our servers</td>
+                <td>IP address, connection metadata</td>
+                <td>EU / USA</td>
+            </tr>
+            <tr>
+                <td>Groq, Inc.</td>
+                <td>AI language model and safety check</td>
+                <td>Chef AI messages, attached photos, recent conversation context</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td>Tavily, Inc.</td>
+                <td>Web search for recipes</td>
+                <td>Search terms derived from your message</td>
+                <td>USA</td>
+            </tr>
+        </table>
+        </div>
+        <p style="margin-top: 12px;">
+            Where data is transferred to the USA, this is based on the EU Standard Contractual Clauses
+            (Art. 46(2)(c) GDPR) concluded with the respective provider. Groq and Tavily receive only the content
+            needed to answer your request, not your email address or account details.
+        </p>
+        <p>We do not sell your data and do not share it with third parties for advertising.</p>
+    </section>
+
+    <section>
+        <h2>4. Retention</h2>
+        <ul>
+            <li><strong>Account and shopping lists</strong> — until you delete them or your account.</li>
+            <li><strong>Chat history</strong> — until you delete individual conversations or all conversations in the app, or your account.</li>
+            <li><strong>Photos sent to Chef AI</strong> — not stored; processed only for that request.</li>
+            <li><strong>Server logs</strong> — kept only as long as needed for security and troubleshooting, then deleted.</li>
+        </ul>
+        <p style="margin-top: 12px;">
+            Deleting your account removes your account, profile, shopping lists you own, list memberships and chat history.
+            To delete your account, email us at the address in section 1.
+        </p>
+    </section>
+
+    <section>
+        <h2>5. Your Rights</h2>
+        <p>Under the GDPR you have the right to:</p>
+        <ul>
+            <li>access the personal data we hold about you (Art. 15),</li>
+            <li>have inaccurate data corrected (Art. 16),</li>
+            <li>have your data erased (Art. 17),</li>
+            <li>restrict processing (Art. 18),</li>
+            <li>receive your data in a portable format (Art. 20),</li>
+            <li>object to processing based on legitimate interests (Art. 21).</li>
+        </ul>
+        <p style="margin-top: 12px;">
+            To exercise these rights, contact us at
+            <a href="mailto:betreffen_skalar.2n@icloud.com">betreffen_skalar.2n@icloud.com</a>.
+            You also have the right to lodge a complaint with a data protection supervisory authority (Art. 77 GDPR).
+        </p>
+    </section>
+
+    <section>
+        <h2>6. Automated Decisions</h2>
+        <p>
+            The safety check described in section 2.3 automatically blocks requests that violate our usage policy.
+            It only affects whether Chef AI answers a message and has no legal or similarly significant effect on you.
+            We do not carry out profiling.
+        </p>
+    </section>
+
+    <section>
+        <h2>7. Security</h2>
+        <ul>
+            <li>All connections between the app and our servers are encrypted (HTTPS/TLS).</li>
+            <li>Authentication tokens are stored in the iOS Keychain.</li>
+            <li>Database access is restricted by row-level security so that users can only access their own data and lists shared with them.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>8. Children</h2>
+        <p>
+            The Bag is not directed at children under 16. We do not knowingly process data of children under 16.
         </p>
     </section>
 
     <section>
         <h2>9. Changes to This Policy</h2>
         <p>
-            We may update this Privacy Policy from time to time.
-            The "Last updated" date at the top of this page will reflect any changes.
-            Continued use of the app after changes constitutes acceptance of the updated policy.
-        </p>
-    </section>
-
-    <section>
-        <h2>10. Contact</h2>
-        <p>
-            For any privacy-related questions or requests, contact us at:<br>
-            <a href="mailto:betreffen_skalar.2n@icloud.com">betreffen_skalar.2n@icloud.com</a>
+            We may update this policy when the app changes. The "Last updated" date at the top of this page
+            shows the current version.
         </p>
     </section>
 </main>
 
 <footer>
-    <p>© 2026 crystovh · The Bag · All rights reserved</p>
+    <p>&copy; 2026 crystovh &middot; The Bag</p>
 </footer>
 
 </body>
