@@ -140,7 +140,7 @@
 </header>
 
 <main>
-    <p class="last-updated">Last updated: 3 October 2026</p>
+    <p class="last-updated">Last updated: 4 October 2026</p>
 
     <div class="highlight">
         <p>
@@ -171,6 +171,10 @@
         <p>
             Purpose: creating and securing your account, password reset, showing you to list members.<br>
             Legal basis: Art. 6(1)(b) GDPR (performance of a contract). Providing an email address is required to create an account.
+        </p>
+        <p>
+            Each account also has a <strong>usage class</strong> (e.g. &ldquo;normal&rdquo;) that determines how many
+            Chef AI requests you can make per hour and per day (see section 2.3).
         </p>
 
         <h3>2.2 Shopping lists</h3>
@@ -218,8 +222,21 @@
             you can review and change every assignment before saving.
         </p>
         <p>
+            <strong>Backup AI providers:</strong> if our primary AI provider (Groq) is unavailable or has reached its
+            capacity limit, the same request &mdash; with the same data and nothing more &mdash; is sent through the
+            AI router Requesty (EU endpoint) to a backup model hosted in the EU (Nebius, Google Cloud Vertex AI or
+            Microsoft Azure, see section 3). We only use backup models that, according to the provider, do not
+            store the data or use it for training.
+        </p>
+        <p>
+            <strong>Usage limits:</strong> to keep the service available for everyone and to prevent misuse, our server
+            counts your Chef AI requests (chat messages, recipe imports, Sync to Bag) per account. The count is kept only
+            in the server's memory for at most 24 hours and is not stored in a database. When you reach a limit, the app
+            shows a notice.
+        </p>
+        <p>
             Purpose: providing the Chef AI assistant, your conversation history and the category suggestions for Sync to Bag; preventing misuse of the AI service.<br>
-            Legal basis: Art. 6(1)(b) GDPR for the assistant and history; Art. 6(1)(f) GDPR (legitimate interest in preventing misuse) for the safety check.
+            Legal basis: Art. 6(1)(b) GDPR for the assistant and history; Art. 6(1)(f) GDPR (legitimate interest in preventing misuse and keeping the service available) for the safety check, backup providers and usage limits.
         </p>
 
         <h3>2.4 Technical data</h3>
@@ -282,12 +299,36 @@
                 <td>Search terms derived from your message</td>
                 <td>USA</td>
             </tr>
+            <tr>
+                <td>Requesty</td>
+                <td>AI router for backup models, only when Groq is unavailable or at its limit</td>
+                <td>The same data as Groq, for that request only</td>
+                <td>EU endpoint</td>
+            </tr>
+            <tr>
+                <td>Nebius</td>
+                <td>Backup AI language model (Chef AI text chat), via Requesty</td>
+                <td>As for Groq</td>
+                <td>Netherlands</td>
+            </tr>
+            <tr>
+                <td>Google Cloud (Vertex AI)</td>
+                <td>Backup AI language models (chat with photos, recipe import, Sync to Bag), via Requesty</td>
+                <td>As for Groq</td>
+                <td>EU</td>
+            </tr>
+            <tr>
+                <td>Microsoft Azure</td>
+                <td>Backup safety check (text and photos), via Requesty</td>
+                <td>As for Groq</td>
+                <td>Germany</td>
+            </tr>
         </table>
         </div>
         <p style="margin-top: 12px;">
             Where data is transferred to the USA, this is based on the EU Standard Contractual Clauses
-            (Art. 46(2)(c) GDPR) concluded with the respective provider. Groq and Tavily receive only the content
-            needed to answer your request, not your email address or account details.
+            (Art. 46(2)(c) GDPR) concluded with the respective provider. Groq, Tavily and the backup providers receive
+            only the content needed to answer your request, not your email address or account details.
         </p>
         <p>We do not sell your data and do not share it with third parties for advertising.</p>
     </section>
@@ -298,11 +339,12 @@
             <li><strong>Account and shopping lists</strong> — until you delete them or your account.</li>
             <li><strong>Chat history</strong> — until you delete individual conversations or all conversations in the app, or your account.</li>
             <li><strong>Photos sent to Chef AI</strong> — not stored; processed only for that request.</li>
+            <li><strong>Usage counts for Chef AI limits</strong> — only in the server's memory, for at most 24 hours.</li>
             <li><strong>Server logs</strong> — kept only as long as needed for security and troubleshooting, then deleted.</li>
         </ul>
         <p style="margin-top: 12px;">
             You can delete your account at any time in the app under <strong>Account → Delete Account</strong>.
-            This permanently removes your account, profile, chat history, list memberships and all shopping lists you own,
+            This permanently removes your account, profile, usage class, chat history, list memberships and all shopping lists you own,
             including for members you shared them with. Items you added to other people's lists remain in those lists
             but are no longer linked to you. All app data on your device is removed as well.
             If you cannot access the app, you can also request deletion by email at the address in section 1.
