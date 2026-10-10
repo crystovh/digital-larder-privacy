@@ -140,7 +140,7 @@
 </header>
 
 <main>
-    <p class="last-updated">Last updated: 10 October 2026</p>
+    <p class="last-updated">Last updated: 11 October 2026</p>
 
     <div class="highlight">
         <p>
@@ -239,6 +239,13 @@
             you can review and change every assignment before saving.
         </p>
         <p>
+            <strong>Quick add in the Bag:</strong> when you type items into the field at the top of your shopping
+            list (e.g. &ldquo;4 apples, 500 g flour and milk&rdquo;), the text you typed and the names of your
+            shopping-list categories are sent to our server and the AI language model, which splits the text into
+            separate items with amounts and assigns each one to a category. Nothing of this is stored; you can review
+            and change every item before saving.
+        </p>
+        <p>
             <strong>Backup AI providers:</strong> if our primary AI provider (Groq) is unavailable or has reached its
             capacity limit, the same request &mdash; with the same data and nothing more &mdash; is sent through the
             AI router Requesty (EU endpoint) to a backup model hosted in the EU (Nebius, Google Cloud Vertex AI or
@@ -247,12 +254,12 @@
         </p>
         <p>
             <strong>Usage limits:</strong> to keep the service available for everyone and to prevent misuse, our server
-            counts your Chef AI requests (chat messages, recipe imports, Sync to Bag) per account. The count is kept only
+            counts your Chef AI requests (chat messages, recipe imports, Sync to Bag, quick add) per account. The count is kept only
             in the server's memory for at most 24 hours and is not stored in a database. When you reach a limit, the app
             shows a notice.
         </p>
         <p>
-            Purpose: providing the Chef AI assistant, your conversation history and the category suggestions for Sync to Bag; preventing misuse of the AI service.<br>
+            Purpose: providing the Chef AI assistant, your conversation history and the category suggestions for Sync to Bag and quick add; preventing misuse of the AI service.<br>
             Legal basis: Art. 6(1)(b) GDPR for the assistant and history; Art. 6(1)(f) GDPR (legitimate interest in preventing misuse and keeping the service available) for the safety check, backup providers and usage limits.
         </p>
 
@@ -306,7 +313,7 @@
             <tr>
                 <td>Groq, Inc.</td>
                 <td>AI language model and safety check</td>
-                <td>Chef AI messages, attached photos, recent conversation context, your Chef AI preferences; for Sync to Bag: ingredient names/amounts and shopping-list category names</td>
+                <td>Chef AI messages, attached photos, recent conversation context, your Chef AI preferences; for Sync to Bag: ingredient names/amounts and shopping-list category names; for quick add: the text you typed and shopping-list category names</td>
                 <td>USA</td>
             </tr>
             <tr>
@@ -329,7 +336,7 @@
             </tr>
             <tr>
                 <td>Google Cloud (Vertex AI)</td>
-                <td>Backup AI language models (chat with photos, recipe import, Sync to Bag), via Requesty</td>
+                <td>Backup AI language models (chat with photos, recipe import, Sync to Bag, quick add), via Requesty</td>
                 <td>As for Groq</td>
                 <td>EU</td>
             </tr>
