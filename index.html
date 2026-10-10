@@ -140,7 +140,7 @@
 </header>
 
 <main>
-    <p class="last-updated">Last updated: 4 October 2026</p>
+    <p class="last-updated">Last updated: 10 October 2026</p>
 
     <div class="highlight">
         <p>
@@ -174,7 +174,7 @@
         </p>
         <p>
             Each account also has a <strong>usage class</strong> (e.g. &ldquo;normal&rdquo;) that determines how many
-            Chef AI requests you can make per hour and per day (see section 2.3).
+            Chef AI requests you can make per hour and per day (see section 2.4).
         </p>
 
         <h3>2.2 Shopping lists</h3>
@@ -192,7 +192,24 @@
             Legal basis: Art. 6(1)(b) GDPR.
         </p>
 
-        <h3>2.3 Chef AI</h3>
+        <h3>2.3 Recipe library</h3>
+        <p>
+            Your <strong>recipe library</strong> is stored in your account so it is available again after reinstalling the app.
+            This includes <strong>saved and planned recipes</strong> (name, ingredients, steps, cooking time, servings,
+            calories, dietary tags, image link), <strong>favorites and ratings</strong> and your <strong>recipe categories</strong>.
+            Your recipe library is visible only to you; it is not shared with members of your shopping lists.
+        </p>
+        <p>
+            Changes you make while offline are kept on your device and sent to our servers later. Before a sync removes
+            recipes from your device, the app keeps one backup copy of your library on your iPhone only; each new backup
+            replaces the previous one.
+        </p>
+        <p>
+            Purpose: providing the recipe library and keeping it across reinstalls.<br>
+            Legal basis: Art. 6(1)(b) GDPR.
+        </p>
+
+        <h3>2.4 Chef AI</h3>
         <p>
             When you use Chef AI, the <strong>messages you type</strong>, any <strong>photos you attach</strong>,
             and <strong>links to recipe pages</strong> you send are transmitted to our server and forwarded to an
@@ -239,7 +256,7 @@
             Legal basis: Art. 6(1)(b) GDPR for the assistant and history; Art. 6(1)(f) GDPR (legitimate interest in preventing misuse and keeping the service available) for the safety check, backup providers and usage limits.
         </p>
 
-        <h3>2.4 Technical data</h3>
+        <h3>2.5 Technical data</h3>
         <p>
             When the app communicates with our servers, technical data such as your <strong>IP address</strong>,
             request time, and app/device information sent by iOS is processed and may appear in short-lived server logs.
@@ -249,12 +266,11 @@
             Legal basis: Art. 6(1)(f) GDPR (legitimate interest in a secure and functioning service).
         </p>
 
-        <h3>2.5 Data that stays on your device</h3>
+        <h3>2.6 Data that stays on your device</h3>
         <p>
-            Your <strong>recipe library</strong> (saved recipes, favorites, ratings, planned meals, recipe categories),
-            your app settings (e.g. language) and the shopping-mode Live Activity are stored only on your iPhone
+            Your app settings (e.g. language) and the shopping-mode Live Activity are stored only on your iPhone
             and are not sent to our servers. Your Chef AI preferences are also stored only on your iPhone; they are
-            sent with each Chef AI message as described in section 2.3, but not stored by us. Deleting the app removes
+            sent with each Chef AI message as described in section 2.4, but not stored by us. Deleting the app removes
             this data.
         </p>
         <p>
@@ -272,7 +288,7 @@
             <tr>
                 <td>Supabase, Inc.</td>
                 <td>Database, authentication, real-time sync</td>
-                <td>Account, shopping lists, chat history</td>
+                <td>Account, shopping lists, chat history, recipe library</td>
                 <td>EU (Ireland)</td>
             </tr>
             <tr>
@@ -337,6 +353,7 @@
         <h2>4. Retention</h2>
         <ul>
             <li><strong>Account and shopping lists</strong> — until you delete them or your account.</li>
+            <li><strong>Recipe library</strong> — until you delete recipes or categories in the app, or your account.</li>
             <li><strong>Chat history</strong> — until you delete individual conversations or all conversations in the app, or your account.</li>
             <li><strong>Photos sent to Chef AI</strong> — not stored; processed only for that request.</li>
             <li><strong>Usage counts for Chef AI limits</strong> — only in the server's memory, for at most 24 hours.</li>
@@ -344,7 +361,7 @@
         </ul>
         <p style="margin-top: 12px;">
             You can delete your account at any time in the app under <strong>Account → Delete Account</strong>.
-            This permanently removes your account, profile, usage class, chat history, list memberships and all shopping lists you own,
+            This permanently removes your account, profile, usage class, chat history, recipe library, list memberships and all shopping lists you own,
             including for members you shared them with. Items you added to other people's lists remain in those lists
             but are no longer linked to you. All app data on your device is removed as well.
             If you cannot access the app, you can also request deletion by email at the address in section 1.
@@ -372,7 +389,7 @@
     <section>
         <h2>6. Automated Decisions</h2>
         <p>
-            The safety check described in section 2.3 automatically blocks requests that violate our usage policy.
+            The safety check described in section 2.4 automatically blocks requests that violate our usage policy.
             It only affects whether Chef AI answers a message and has no legal or similarly significant effect on you.
             We do not carry out profiling.
         </p>
@@ -383,7 +400,7 @@
         <ul>
             <li>All connections between the app and our servers are encrypted (HTTPS/TLS).</li>
             <li>Authentication tokens are stored in the iOS Keychain.</li>
-            <li>Database access is restricted by row-level security so that users can only access their own data and lists shared with them.</li>
+            <li>Database access is restricted by row-level security so that users can only access their own data (including their recipe library) and lists shared with them.</li>
         </ul>
     </section>
 
